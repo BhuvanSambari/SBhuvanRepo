@@ -1,45 +1,50 @@
 <div align="center">
 
-<img src="./ascii.svg" width="460" alt="Andrii Drok"/>
+<img src="./ascii.svg" width="460" alt="Sambari Bhuvan"/>
 
 <img src="./stats.svg" width="620" alt="Contributions in the last year"/>
 
-[andriidrok.com](https://andriidrok.com) &nbsp;·&nbsp;
-[instagram](https://www.instagram.com/andrii_drok/) &nbsp;·&nbsp;
-[linkedin](https://www.linkedin.com/in/andriidrok/) &nbsp;·&nbsp;
-[email](mailto:clb@mirasvit.com)
+[dbrsolarepc.com](https://www.dbrsolarepc.com/) &nbsp;·&nbsp;
+[linkedin](https://www.linkedin.com/in/bhuvan-sambari-3b58b5278/) &nbsp;·&nbsp;
+[leetcode](https://leetcode.com/u/sbhuvansambari/) &nbsp;·&nbsp;
+[email](mailto:maha123dev45@gmail.com)
 
 </div>
 
 <img src="./hd-about.svg" width="620" alt="about"/>
 
-> CS student at San Francisco State, in the SF Bay Area.<br>
-> Small, sharp tools over big vague ideas.
+> Robotics & AI Engineer at Vellore Institute of Technology (VIT Chennai '27).<br>
+> Neuromorphic architectures, autonomous perception, and production systems.
 
-I build fast, test on real users, and kill what doesn't work. Right now that's<br>
-[autobroll](https://github.com/andriidrok1/autobroll) — an AI short-form video editor that runs in the browser. Also<br>
-deep into markets: Pine Script indicators, backtesting, on-chain data.
+I engineer biologically inspired neural architectures, autonomous robotics pipelines, and scalable web<br>
+platforms. Right now that's [neuromorphic-snn](https://github.com/BhuvanSambari) — energy-efficient spiking neural networks<br>
+for edge-AI autonomy. Also deployed [dbrsolarepc.com](https://www.dbrsolarepc.com/) and real-time RPLIDAR SLAM on mobile rovers.
 
 <img src="./hd-stack.svg" width="620" alt="stack"/>
 
-<samp>python &nbsp; typescript &nbsp; javascript &nbsp; react &nbsp; node &nbsp; three.js &nbsp; fastapi &nbsp; postgres &nbsp; docker &nbsp; git &nbsp; linux</samp>
+<samp>python &nbsp; c++ &nbsp; ros2 &nbsp; pytorch &nbsp; opencv &nbsp; snn &nbsp; react &nbsp; django &nbsp; postgres &nbsp; docker &nbsp; linux</samp>
 
 <img src="./hd-projects.svg" width="620" alt="projects"/>
 
-**[autobroll](https://github.com/andriidrok1/autobroll)** &nbsp;·&nbsp; <samp>typescript, remotion</samp><br>
-AI short-form video editor in the browser. Auto captions with accents,<br>
-drag-and-retime editing, b-roll placement: transcript in, rendered video out.
+**[neuromorphic-snn-brain](https://github.com/BhuvanSambari)** &nbsp;·&nbsp; <samp>python, snn, neuromorphic</samp><br>
+Energy-efficient neuromorphic framework combining Spiking Neural Networks and animalistic<br>
+autonomy loops with >60% reduced temporal processing overhead under strict hardware limits.
 
-**[strategy-checker](https://github.com/andriidrok1/strategy-checker)** &nbsp;·&nbsp; <samp>python</samp><br>
-Describe a trading strategy in plain English, get a real backtest with<br>
-statistical validation. Exposes curve-fitting, not alpha.
+**[dbr-solar-epc](https://www.dbrsolarepc.com/)** &nbsp;·&nbsp; <samp>full stack, react, django, postgres</samp><br>
+Production enterprise solar EPC web platform serving corporate & industrial energy clients.<br>
+Sub-1.2s First Contentful Paint with 95+ Lighthouse score across desktop and mobile.
 
-**[compound](https://github.com/andriidrok1/compound)** &nbsp;·&nbsp; <samp>typescript, convex</samp><br>
-Autonomous research agent for your second brain. Built solo at Nozomio<br>
-Hackathon, EF SF.
+**[rover-visual-odometry](https://github.com/BhuvanSambari)** &nbsp;·&nbsp; <samp>opencv, python, deep learning</samp><br>
+Real-time multi-frame ego-motion estimation and optical flow tracking pipeline computing<br>
+sub-30ms per-frame camera pose recovery with RANSAC outlier rejection.
 
-**[andriidrok.com](https://andriidrok.com)** &nbsp;·&nbsp; <samp>three.js, webgl</samp><br>
-Particle-morph portfolio: thousands of particles reshaping between scenes.
+**[rplidar-slam-mapping](https://github.com/BhuvanSambari)** &nbsp;·&nbsp; <samp>ros2, gazebo, rviz, c++</samp><br>
+Simultaneous Localization and Mapping on physical differential rovers with zero-drift<br>
+laser scan matching, costmap tuning, and occupancy grids.
+
+**[crowd-fall-detection](https://github.com/BhuvanSambari)** &nbsp;·&nbsp; <samp>opencv, pose estimation, spatial heatmaps</samp><br>
+High-density crowd anomaly tracking and low-latency (<150ms) fall-detection architecture<br>
+with edge-local video inference preserving data privacy.
 
 <img src="./hd-stats.svg" width="620" alt="stats"/>
 

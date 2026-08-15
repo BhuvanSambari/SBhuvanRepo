@@ -31,11 +31,11 @@ to bottom, frozen at the end so it prints once and stops.
 """
 import argparse
 import sys
+import io
 
 import cv2
 import numpy as np
 from PIL import Image
-from rembg import remove
 
 RAMP = " .`:-=+*cs#%@"     # bright/sparse -> dark/dense; leading space = blank
 COLS = 90                  # below ~88 the face muddies; far above it dominates
@@ -60,13 +60,39 @@ def prep(path, crop=None):
     if crop:
         src = src.crop(crop)
 
-    cut = remove(src)
-    alpha = np.array(cut.split()[-1])
+    has_rembg = False
+    try:
+        from rembg import remove
+        has_rembg = True
+    except ImportError:
+        pass
 
-    # Composite onto white so everything outside the subject maps to the blank
-    # end of the ramp. Skip this and the background fills with @ and %.
-    white = Image.new("RGBA", cut.size, (255, 255, 255, 255))
-    gray = np.array(Image.alpha_composite(white, cut).convert("L"))
+    if has_rembg:
+        try:
+            print("Applying rembg background removal...")
+            cut = remove(src)
+            alpha = np.array(cut.split()[-1])
+            white = Image.new("RGBA", cut.size, (255, 255, 255, 255))
+            gray = np.array(Image.alpha_composite(white, cut).convert("L"))
+        except Exception as e:
+            print(f"rembg warning: {e}, falling back to contour mask...")
+            has_rembg = False
+
+    if not has_rembg:
+        # Fallback luminance & vignette segmentation
+        np_src = np.array(src)
+        h, w = np_src.shape[:2]
+        center_x, center_y = w // 2, int(h * 0.45)
+        radius_x, radius_y = int(w * 0.44), int(h * 0.52)
+        y_indices, x_indices = np.ogrid[:h, :w]
+        dist_from_center = ((x_indices - center_x) ** 2) / (radius_x ** 2) + ((y_indices - center_y) ** 2) / (radius_y ** 2)
+        mask = np.clip(1.0 - (dist_from_center - 0.75) * 2.0, 0.0, 1.0)
+        alpha = (mask * 255).astype(np.uint8)
+        
+        gray_src = np.array(src.convert("L"))
+        white_bg = np.ones_like(gray_src, dtype=np.float32) * 255.0
+        alpha_norm = alpha.astype(np.float32) / 255.0
+        gray = (gray_src.astype(np.float32) * alpha_norm + white_bg * (1.0 - alpha_norm)).astype(np.uint8)
 
     gray = cv2.bilateralFilter(gray, 11, 50, 50)      # smooth skin, keep edges
     gray = cv2.createCLAHE(clipLimit=CLAHE_CLIP,
